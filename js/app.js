@@ -1,14 +1,9 @@
-/*
-    Put all event handlers in HERE
-*/
-
 import Rectangle from "./BLO/Rectangle.js";
 import MainUI from "./ULO/MainUI.js";
 
 
 /*
-    One of the main responsiblity of the app object is to deterine which DOM to load for which page
-
+  This is my app object
 */
 const app=
 {
@@ -41,6 +36,7 @@ const app=
             alert("Main UI Has finished loaded");
         })
 
+        
         MainUI.calculateButton.addEventListener("click",function(){
 
         /*
