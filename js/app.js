@@ -1,5 +1,7 @@
 import Rectangle from "./BLO/Rectangle.js";
 import MainUI from "./ULO/MainUI.js";
+import ReportUI from "./ULO/ReportUI.js";
+import DOA  from "./DAO/DOA.js";
 
 
 /*
@@ -33,25 +35,25 @@ const app=
 
         document.addEventListener("DOMContentLoaded",function(){
 
-            alert("Main UI Has finished loaded");
+        
         })
 
         
-        MainUI.calculateButton.addEventListener("click",function(){
-
-        /*
-            Logically what I want to do in here!!!!!!
-
-        */
-
-       const rec = new Rectangle(parseFloat(MainUI.lengthTextField.value),parseFloat(MainUI.widthTextField.value));
-       
-       MainUI.populateAnswerContainer(rec)
-
-
-        });
+        MainUI.calculateButton.addEventListener("click",function(){       
 
     
+        const hasErrors =  MainUI.validateFields(); // validate
+
+       if(hasErrors==false)
+       {
+            const rec = new Rpaectangle(rseFloat(MainUI.lengthTextField.value),parseFloat(MainUI.widthTextField.value));
+        
+            DOA.storeDataToWebStorage("rectangleData",rec);
+        
+            location.href="html/report.html";
+       }
+
+        });    
 
     },
 
@@ -59,8 +61,11 @@ const app=
     {
 
         document.addEventListener("DOMContentLoaded",function(){
+ 
+            const rect =DOA.getDataFromWebStorage("rectangleData");
 
-            alert("Second Page Has finished loaded");
+            ReportUI.populateAnswerContainer(new Rectangle(rect.length,rect.width));
+    
         })
 
 

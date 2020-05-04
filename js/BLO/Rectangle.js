@@ -1,3 +1,5 @@
+
+//This is a Business Logic Object
 class Rectangle
 {
 
@@ -28,5 +30,6 @@ class Rectangle
 
 
 }
+
 
 export default Rectangle;
