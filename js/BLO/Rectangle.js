@@ -7,7 +7,7 @@ class Rectangle
 
     length;
     width;
-
+    
     //constructor
     constructor(l,w)
     {
@@ -16,18 +16,15 @@ class Rectangle
     }
 
     //methods
-
     calArea()
     {
        return this.length * this.width;
     }
 
-
     calPerimeter()
     {
         return 2*(this.width+this.length);
     }
-
 
 }
 

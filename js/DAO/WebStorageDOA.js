@@ -1,29 +1,24 @@
-const DAO = 
+const WebStorageDAO = 
 {
-
-    
-        storeDataToWebStorage(name,obj)
+        storeDataToSessionStorage(name,obj)
         {
             sessionStorage.setItem(name,JSON.stringify(obj));
 
         },
-
-
-        getDataFromWebStorage(name)
+        
+        getDataFromSessionStorage(name)
         
         {
             return JSON.parse(sessionStorage.getItem(name))
         },
 
-
-        storeDataToWebStorageLocal(name,obj)
+        storeDataToLocalStorag(name,obj)
         {
             localStorage.setItem(name,JSON.stringify(obj));
 
         },
 
-
-        getDataFromWebStorageLocal(name)
+        getDataFromLocalStorage(name)
         
         {
             return JSON.parse(localStorage.getItem(name))
@@ -32,4 +27,4 @@ const DAO =
 
 }
 
-export default DAO;
+export default WebStorageDAO;
